@@ -1,10 +1,14 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
 
 const app = express();
 
 //Using body-parser
 app.use(bodyParser.urlencoded({ extended: false}));
+
+//Using cookie-parser
+app.use(cookieParser());
 
 //Set template engine
 app.set('view engine', 'pug');
@@ -23,14 +27,14 @@ app.get("/cards", (req, res) => {
 
 //ruta Hello
 app.get("/hello", (req, res) => {
-	res.render("hello");
+	res.render("hello",{
+		username: req.cookies.username
+	});
 });
 
 app.post("/hello", (req, res) => {
-	console.log(req.body.username);
-	res.render("hello", {
-		username: req.body.username
-	})
+	res.cookie('username', req.body.username);
+	res.redirect("/hello");
 });
 
 app.listen(3000, () => {
