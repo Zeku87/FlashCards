@@ -1,7 +1,12 @@
 const express = require('express');
+const bodyParser = require('body-parser');
 
 const app = express();
 
+//Using body-parser
+app.use(bodyParser.urlencoded({ extended: false}));
+
+//Set template engine
 app.set('view engine', 'pug');
 
 //Root route
@@ -16,9 +21,17 @@ app.get("/cards", (req, res) => {
 	res.render("card");
 });
 
-//sandbox
-//Nombres
+//ruta Hello
+app.get("/hello", (req, res) => {
+	res.render("hello");
+});
 
+app.post("/hello", (req, res) => {
+	console.log(req.body.username);
+	res.render("hello", {
+		username: req.body.username
+	})
+});
 
 app.listen(3000, () => {
 	console.log("Conectado al puerto 3000");

@@ -1,0 +1,13 @@
+extends layout.pug
+
+block content
+	if(username)
+		h2 ¡Bienvenid@ #{username}!
+	else
+		h2 ¡Bienvenido estudiante!
+		form(action='/hello', method='post')
+			label Escribe tu nombre:
+			br
+			input(type='text', name='username')
+			br
+			button(type='submit') Incribirse
