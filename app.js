@@ -14,8 +14,23 @@ app.use(cookieParser());
 app.set('view engine', 'pug');
 
 //Root route
+//Redirecciona si el usuario no ha introducido nombre
 app.get("/", (req, res) => {
-	res.render("index");
+	const username = req.cookies.username;
+	if(typeof(username) == 'undefined'){
+		res.redirect('/hello');
+	}
+	else{
+		res.render("index",{
+			username: username
+		});
+	}
+});
+
+//El usuario quiere salir de modo que borramos la cookie con su nombre
+app.post("/bye-bye", (req, res) => {
+	res.clearCookie('username');
+	res.redirect('/hello');
 });
 
 //Ruta donde se visualizan todas las cards
@@ -26,15 +41,21 @@ app.get("/cards", (req, res) => {
 });
 
 //ruta Hello
+//si el usuario no ha introducido su nombre lo introduce y le redirecciona a la pag principal
+//Si el usuario ya ha introducido su nombre se redirecciona a la pagina principal
 app.get("/hello", (req, res) => {
-	res.render("hello",{
-		username: req.cookies.username
-	});
+	const username = req.cookies.username;
+	if(typeof(username) == 'undefined'){
+		res.render("hello");
+	}
+	else {
+		res.redirect("/");
+	}
 });
 
 app.post("/hello", (req, res) => {
-	res.cookie('username', req.body.username);
-	res.redirect("/hello");
+		res.cookie('username', req.body.username);
+		res.redirect("/");
 });
 
 app.listen(3000, () => {
