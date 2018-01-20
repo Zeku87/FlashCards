@@ -58,6 +58,18 @@ app.post("/hello", (req, res) => {
 		res.redirect("/");
 });
 
+app.use((req, res, next) => {
+	const err = new Error("¡¡Te has salido del tiesto!!");
+	err.status = 404;
+	next(err);
+});
+
+app.use((err, req, res, next) => {
+	res.locals.error = err;
+	res.status(404);
+	res.render('error');
+});
+
 app.listen(3000, () => {
 	console.log("Conectado al puerto 3000");
 });
