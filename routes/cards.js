@@ -9,11 +9,43 @@
 const express = require("express");
 const router = express.Router();
 
+const {data} = require("../data/flashcards.json"); // equivale a data = require(...).data
+const {cards} = data; // equivale a cards = data.cards
+
 //Ruta donde se visualizan todas las cards
-router.get("/", (req, res) => {
-	res.locals.prompt = "hola soy una futura flash card"; 
-	res.locals.hint = "Aqui va la pista"; 
-	res.render("card");
+router.get("/:id", (req, res) => {
+//http://example.com/resource?building=42&age=40&color=salmon
+	
+	let cardDataTemplate = {};
+	const {id} = req.params;
+	const {side} = req.query; //side puede contener "question" o "answer" o undefined
+	
+	if( side )
+	{	
+		const text = cards[id][side];
+		const hint = cards[id]["hint"];
+	
+		if(side === 'question')
+			cardDataTemplate = { id, text, hint};
+		if(side === 'answer')
+			cardDataTemplate = { id, text };
+	}
+	else{
+		const text = cards[id]["question"];
+		const hint = cards[id]["hint"];
+		cardDataTemplate = {id, text, hint};
+	}
+
+	res.render("card", cardDataTemplate);
 });
+
+
+//Ruta /cards saca un numero aleatorio(una card aleatoria) y redireccionamos
+router.get("/", (req, res) => {
+		const cardId = Math.floor(Math.random() * cards.length);
+		res.redirect(`/cards/${cardId}?side=question`);
+});
+
+
 
 module.exports = router;

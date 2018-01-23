@@ -1,13 +1,18 @@
 extends layout.pug
 block content
 	section.content
-		if prompt
-			h2 #{prompt}
+		if text
+			h2 #{text}
 		else
 			h2 Nada que mostrar
 		
+		//- Si hay pista entonces estás viendo la pregunta
 		if hint
 			p
 				i
 					h2 Hint: #{hint}
-		
+			a(href="/cards/"+ id + "?side=answer") Ver respuesta
+
+		//- Si no es porque estás viendo la respuesta
+		else
+			a(href="/cards/"+ id +"?side=question") Ver pregunta
