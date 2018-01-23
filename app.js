@@ -13,6 +13,9 @@ app.use(cookieParser());
 //Set template engine
 app.set('view engine', 'pug');
 
+//Static assets
+app.use('/static', express.static('public'));
+
 //Routes, dado que el fichero se llama index.js, no es necesario indicarlo
 const mainRoutes = require("./routes");
 const cardRoutes = require("./routes/cards");
