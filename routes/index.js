@@ -9,9 +9,7 @@ router.get("/", (req, res) => {
 		res.redirect('/hello');
 	}
 	else{
-		res.render("index",{
-			username: username
-		});
+		res.render("index",{ username });
 	}
 });
 

@@ -2,13 +2,10 @@ doctype html
 html(lang="en")
 	head
 		title Flash Cards
+		link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300|Rammetto+One|Roboto:1300")
 		link(rel="stylesheet" href="/static/stylesheets/style.css")
 	body
 		include includes/header.pug
-		if username
-			h2 Te doy la bienvenida #{username}
-			form(action="/bye-bye", method="post")
-				button.button-primary-small(type="submit") Adios
 		block content
 		include includes/footer.pug
 		

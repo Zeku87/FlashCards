@@ -1,20 +1,20 @@
 extends layout.pug
 block content
-	section.content
+	div.card
 		if text
-			h2 #{text}
+			p.card-text #{text}
 		else
-			h2 Nada que mostrar
+			p.card-text Nada que mostrar
 		
 		//- Si hay pista entonces estás viendo la pregunta
 		if hint
 			p
 				i
-					h2 Hint: #{hint}
-			a(href="/cards/"+ id + "?side=answer") Ver respuesta
+					p.card-hint Hint: #{hint}
+			a.card-answer(href="/cards/"+ id + "?side=answer") Ver respuesta
 
-		//- Si no es porque estás viendo la respuesta
+		//- Si no estás viendo la respuesta
 		else
-			a(href="/cards/"+ id +"?side=question") Ver pregunta
+			a.card-question(href="/cards/"+ id +"?side=question") Ver pregunta
 			
-		a(href="/cards") Ver otra flashcard
+		a.card-nextCard(href="/cards") Ver otra flashcard

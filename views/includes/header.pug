@@ -1,2 +1,7 @@
-header
-	h1 Flash cards
+div.header
+	h1.header-title Flash Cards
+	if username
+		div.header-username
+			h5.header-username-greeting ¡Hola #{username}!
+			form.header-username-exit(action="/bye-bye", method="post")
+				button.button-primary-small(type="submit") Salir

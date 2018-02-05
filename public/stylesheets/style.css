@@ -1,0 +1,123 @@
+body{
+	font-family: 'Roboto', sans-serif;
+	background-color: beige;
+	color: white;
+	margin: 0;
+	padding: 0;
+}
+
+a{
+	text-decoration: none;
+	padding: 5px 10px;
+	background-color: #1e74ff;
+	color: beige;
+}
+
+
+.button-primary-small{
+	outline: none;
+	color: white;
+	background-color: #1e74ff;
+	border: none;
+	border-radius: 5%;
+	padding:5px 10px;
+	font-family: 'Roboto', sans-serif;
+}
+
+.button-primary-small:active{
+	background-color: #422dff;
+}
+
+
+/*       header class          */
+
+.header{
+	position: relative;
+	width: 100%;
+	height: 200px;
+	margin-bottom: 15px;
+}
+
+.header-title{
+	font-family: 'Rammetto One', cursive;
+	text-shadow: 1px -1px 2px #333;
+	text-align: center;
+	font-size: 5rem;
+}
+
+.header-username{
+	position: absolute;
+	display: inline-block;
+	top: 0;
+	left: 75%;
+	padding: 5px 15px;
+	border-radius: 5px;
+	background: #555;
+}
+
+.header-username-greeting{
+	display: inline;
+	margin-right: 0.75rem;
+}
+
+.header-username-exit{
+	display: inline;
+}
+
+/*   Starter class   */
+.starter{
+	margin: 45px 0 130px 0;
+	text-align: center;
+}
+
+.starter-starterLink{
+	padding: 15px 45px;
+	border-radius: 15px;
+	font-size: 2em;
+	font-family: 'Rammetto One', cursive;
+	box-shadow: 2px 2px 5px #888;
+}
+
+/*    Card class     */
+
+.card{
+	position: relative;
+	display: inline-block;
+	background-color: white;
+	box-shadow: 1px 1px 15px #999;
+	color: #333;
+	left: 50%;
+	transform: translateX(-50%);
+	padding: 25px;
+	border-radius: 15px;
+	margin-bottom: 55px;
+}
+
+.card-text{
+	font-family: 'Lato', sans-serif;
+	font-size: 2rem;
+}
+
+.card-answer{
+	background-color: green;
+}
+
+.card-nextCard{
+	margin-left: 5px;
+}
+
+/*   Footer class    */
+
+.footer{
+	position: relative;
+	bottom: 0%;
+	height: 145px;
+	padding-top: 55px;
+	text-align: center;
+	background-color: #333;
+}
+
+.footer_motto{
+	font-family: 'Lato', sans-serif;
+}
+
