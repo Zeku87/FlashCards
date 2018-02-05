@@ -102,8 +102,29 @@ a{
 	background-color: green;
 }
 
-.card-nextCard{
+.card-nextCardBtn{
 	margin-left: 5px;
+}
+
+/*  Cards-flex class   */
+
+.cards-flex{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.cards-flex_card-item{
+	display: inline-block;
+	background-color: white;
+	color: #333;
+	width: 400px;
+	box-shadow: 1px 1px 15px #999;
+	border-radius: 15px;
+	padding: 15px 25px;
+	margin: 10px;
+
 }
 
 /*   Footer class    */

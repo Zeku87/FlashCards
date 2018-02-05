@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const {data} = require("../data/flashcards.json"); // equivale a data = require(...).data
+const {cards} = data;
 
 //Root route
 //Redirecciona si el usuario no ha introducido nombre
@@ -9,7 +11,7 @@ router.get("/", (req, res) => {
 		res.redirect('/hello');
 	}
 	else{
-		res.render("index",{ username });
+		res.render("index",{ username, cards });
 	}
 });
 

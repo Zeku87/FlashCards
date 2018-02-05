@@ -3,4 +3,14 @@ block content
 	div.starter
 		a.starter-starterLink(href="/cards") Empezar
 
-	
+	div.cards-flex
+		each card in cards
+			div.cards-flex_card-item
+				p.card-text #{card.question}
+				
+				//- Si hay pista entonces estás viendo la pregunta
+				if card.hint
+					p
+						i
+							p.card-hint Hint: #{card.hint}
+					

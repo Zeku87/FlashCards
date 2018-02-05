@@ -1,31 +1,31 @@
 {
     "data": {
-        "title": "JavaScript Flashcards",
+        "title": "Cultura general",
         "cards": [
             {
-                "question": "What language are Express apps written in?",
-                "hint": "It starts with a \"J\"",
-                "answer": "JavaScript"
+                "question": "Año en la que la estación espacial fue lanzada al espacio",
+                "hint": "Fue un año antes de yo nacer",
+                "answer": "1986"
             },
             {
-                "question": "What is one way a website can store data in a user's browser?",
-                "hint": "They are delicious with milk",
-                "answer": "Cookies"
+                "question": "Nombre de nuestro sistema solar",
+                "hint": "Tiene que ver con el desayuno",
+                "answer": "Vía láctea"
             },
             {
-                "question": "What is a common way to shorten the response object's name inside middleware?",
-                "hint": "It has the same abbreviation as \"resolution\"",
-                "answer": "res"
+                "question": "Cómo se dice bisagra en inglés",
+                "hint": "Es el reverso de egnih",
+                "answer": "Hinge"
             },
             {
-                "question": "How many different values can booleans have?",
-                "hint": "Think: binary",
-                "answer": "2"
+                "question": "¿Por qué el tigre posee el pela­je a rayas?",
+                "hint": "Superpoderes!",
+                "answer": "Para camuflarse entre la vegetación"
             },
             {
-                "question": "Which HTML element can contain JavaScript?",
-                "hint": "It starts with an \"s\"",
-                "answer": "<script>"
+                "question": "Qué unidades son mejores para hacer diseño responsivo",
+                "hint": "Aquí px está desaconsejada",
+                "answer": "%, rems, ems"
             }
         ]
     }
