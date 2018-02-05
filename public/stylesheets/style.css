@@ -106,6 +106,11 @@ a{
 	margin-left: 5px;
 }
 
+.card-seeAllBtn{
+	margin-left: 5px; 
+	background-color: #42b6f4;
+}
+
 /*  Cards-flex class   */
 
 .cards-flex{
