@@ -118,6 +118,7 @@ a{
 	flex-direction: row;
 	flex-wrap: wrap;
 	justify-content: center;
+	padding-bottom: 5em;
 }
 
 .cards-flex_card-item{
